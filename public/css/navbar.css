@@ -1,0 +1,103 @@
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222;
+}
+
+.form-search{
+    position: relative;
+  }
+  .nav-search{
+    border-radius: 1.2em;
+  }
+   .search-btn{
+      background-color: #fe424d;
+      color: #FFF;
+      border-radius: 1.2em;
+      padding: .2em 1em;
+    } 
+    .search-btn:hover{
+      background-color: #fe424d;
+      color: #FFF;
+   }
+   .suggestions {
+        display: none;
+        position: absolute;
+        height: 25em;
+        background-color: #EDEFEF;
+        width: 25em;
+        /* transform: translate(50%,13%); */
+        right: 50%;
+        overflow: auto;
+        transform: translate(50%,10%);
+        border-radius: 1em;
+        padding: 1rem;
+    }
+    .suggestions-cart{
+      position: relative;
+      padding: .5rem 1rem;
+      /* background-color: red; */
+      /* margin-top: 1rem; */
+      transition: all .1s;
+      align-items: center;
+    }
+    .suggestions-cart:hover{
+      cursor: pointer;
+      background-color: #7777776d;
+    }
+    .suggestions-cart i{
+      position: absolute;
+      top: 25%;
+    }
+    .suggestions-cart p{
+      transform: translateX(10%);
+    }
+
+#list-not-found{
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  padding: 1rem;
+}
+#suggestion-redesign{
+  height: 10em;
+  transform: translate(50%,25%);
+}
+
+.loader {
+	display: flex;
+	gap: .7em;
+	position: absolute;
+	margin: auto;
+	top: 45%;
+	left: 32%;
+}
+.loading-animation{
+  height: 1.375em;
+  width: 1.6em;
+  background-color: #000;
+  border-radius: 50%;
+  animation: loading-animation .6s infinite alternate;
+}
+
+.loading-animation.two{
+  animation-delay: .2s;
+}
+.loading-animation.three{
+  animation-delay: .4s;
+}
+
+@keyframes loading-animation {
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
+  }
+}

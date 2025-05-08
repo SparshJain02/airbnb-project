@@ -1,0 +1,91 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+    <div id="filter">
+        <div class="filters">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Iconic Cities</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-mountain"></i></div>
+            <p>Mountains</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-building-columns"></i></div>
+            <p>Castles</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing Pools</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Campaigns</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-cow"></i></div>
+            <p>Farms</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-snowflake"></i></div>
+            <p>Arctics</p>
+        </div>
+        <div class="form-check form-switch form-check-reverse">
+            <div>
+                <input class="form-check-input" type="checkbox" value="" id="reverseCheck1">
+                <label class="form-check-label" for="reverseCheck1">
+                    Display total after taxes
+                </label>
+            </div>
+        </div>
+    </div>
+    <%if(typeof searchQuery!=="undefined" && searchQuery!==""){%>
+        <div class="mb-3">
+            <h3 >Search results for: <i><%=searchQuery%></i></h3>
+        </div>
+    <%}%>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 ">
+        <%for(list of allListings){%>
+            <a href="/listings/<%=list._id%>" class="d-block">
+                <div class="card col listing-card">
+                    <img src="<%=list.image.url%>" class="card-img-top" style="height: 20rem;" alt="...">
+                    <div class="card-body">
+                        <div class="card-img-overlay"></div>
+                        <p class="card-text title">
+                            <b>
+                                <%=list.title%>
+                            </b>
+                        </p>
+                        <p class="card-text">
+                            &#x20B9;<%=list.price.toLocaleString('en-IN')%>/night
+                            <i class="tax-info">&nbsp;&nbsp;+18%GST</i>
+                        </p>
+                    </div>
+                </div>
+            </a>
+        <%}%>
+    </div>
+</body>
+<script>
+    let taxInfo = document.querySelectorAll(".tax-info");
+    let checkBtn = document.querySelector("#reverseCheck1");
+    checkBtn.addEventListener("click",()=>{
+        for(let tax of taxInfo){
+            if(checkBtn.checked){
+                tax.style.display = "inline";
+            }
+            else{
+                tax.style.display = "none";
+            }
+        }
+        console.log("clicked");
+    })
+</script>

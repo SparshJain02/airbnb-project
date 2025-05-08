@@ -1,0 +1,55 @@
+.row a{
+    text-decoration: none;
+}
+.listing-card{
+    /* margin-right: 1rem; */
+    outline: none;
+    border: none;
+}
+.card-img-top{
+    border-radius: 1rem;
+    /* object-fit: cover; */
+}
+.card-img-top:hover{
+    cursor: pointer;
+}
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+.card-text{
+    padding: 0;
+    margin: 0;
+}
+#filter{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    margin: 2em 0 1em;
+}
+.filters{
+    text-align: center;
+    opacity: 1;
+    /* transform: scale(1); */
+    transition: all 0.3s;
+    font-size: .8em;
+}
+.filters:hover{
+    cursor: pointer;
+    transform: scale(1.2)
+}
+.form-check{
+    /* height: 1rem; */
+    margin-left: auto;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+.form-check div{
+    padding: 1rem 2rem;
+}
+.tax-info{
+    display: none;
+}

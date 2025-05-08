@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.container{
+    flex-grow: 1;
+}
+
+
+/* cards */
+
+
+footer{
+    height: 8rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebebeb;
+    padding: .5rem 0rem;
+}
+.f-links-social{
+    cursor: pointer;
+}
+.f-links-social,.f-links-security{
+    display: flex;
+    gap: .8rem;
+    font-size: 1rem;
+}
+.f-links-security a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-links-security a:hover{
+    text-decoration: underline;
+}
+
+.add-btn{
+    border: none;
+    color: white;
+    background-color: #fe424f;
+}
+.add-btn:hover{
+    background-color: #fe424fcd;
+    color: white;   
+}
+.btn-pos{
+    display: flex;
+}
+.details-img:hover{
+    cursor: default;
+}   
+
+/* MAP */
+#map { 
+    height: 27rem;
+    width: 40rem;
+}
