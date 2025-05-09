@@ -153,40 +153,7 @@ app.get("/find",async(req,res)=>{
     let response = await Listing.findOne({title: query})
     res.json(response);
 })
-// app.get("/greet",(req,res)=>{
-//     let {greet = "User"} = req.cookies;
-//     console.log("Signed Cookies: ",req.signedCookies);
-//     // console.log(`Signed Cookies: ${req.signedCookies}`)
-//     console.log("Unsigned Cookies: ",req.cookies);
-//     res.send(`Welcome ${greet}`);
-//     // if signed cookie complete value is changed then we will receive empty object 
-//     // if signed cookie only value is changed then we will receive key:false like: klfjSparshrdfsd to  klfjAryanrdfsd 
-    
-// })
-// app.get("/session",(req,res)=>{
-//     if(req.session.count){
-//         req.session.count++;
-//     }
-//     else{
-//         req.session.count = 1;
-//     }
-//     console.log(req.session.count);
-//     res.send(`You have visited ${req.session.count} times`);
-// })
 
-// app.get("/register",(req,res)=>{
-//     let {name = "anonymous"} = req.query;
-//     req.session.name = name;
-//     req.flash("registered","user registerd successfully");
-//     res.redirect("/hello");
-
-// })
-// app.get("/hello",(req,res)=>{
-//     res.locals.registered = req.flash("registered");
-//     // res.send(`hello ${req.session.name}`)
-//     let name = req.session.name;
-//     res.render("temp",{name});
-// })
 // listing
 app.use("/listings",listingsRouter);
 // review 
