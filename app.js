@@ -52,7 +52,7 @@ const ExpressError = require("./utils/ExpressError.js");
 
 // cookie parse
 const cookieParser = require("cookie-parser");
-app.use(cookieParser("secretCode"));
+app.use(cookieParser(process.env.SECRET));
 
 // express session
 const session = require("express-session");
@@ -61,7 +61,7 @@ const MongoStore = require('connect-mongo');
 const store = MongoStore.create({
     mongoUrl: dbUrl,
     crypto: {
-        secret: 'secretCode'
+        secret: process.env.SECRET
       },
     //  if you don't want to resave all the session on database every single time that the user refreshes the page, you can lazy update the session, by limiting a period of time.
     touchAfter: 24*3600, // time period in seconds
@@ -69,7 +69,7 @@ const store = MongoStore.create({
 app.use(session(
     {
         store, // same as store:store
-        secret: "secretCode",
+        secret: process.env.SECRET,
         resave: false,
         saveUninitialized: true,
         cookie: {
